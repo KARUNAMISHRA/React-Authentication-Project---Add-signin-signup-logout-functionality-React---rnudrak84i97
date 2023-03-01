@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 function Login() {
     const [username, setUserName] = useState("");
@@ -11,8 +11,11 @@ function Login() {
             window.localStorage.setItem("password", "123");
             history.push("/profile");
         } else {
-            setUserName("");
-            setPassword("");
+            // setUserName("");
+            // setPassword("");
+            window.localStorage.setItem("username", username);
+            window.localStorage.setItem("password", password);
+            history.push("/profile");
         }
     }
 
